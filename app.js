@@ -20,7 +20,7 @@ function createThumbnails(thumbnailArray) {
 }
 
 //STEP 3: we need to write a function to create big image.
-
+//test
 function createLargeImage(largeImage) {
   //set inner HTML to empty string.
   //create img element
