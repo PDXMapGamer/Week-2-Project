@@ -1,16 +1,23 @@
 //Test Comment
 let images = createImageArray();
-console.log(images);
+
 //STEP 1: Select DOM elements that will contain the images.
 const thumbnailContainer = document.getElementById("thumbnail-container");
 const mainImageContainer = document.getElementById("main-image-container");
-//STEP 2: Write a function to create the images in the thumbnail.
+createThumbnails(images);
 
+//STEP 2: Write a function to create the images in the thumbnail.
 function createThumbnails(thumbnailArray) {
   //   A whole array will be passed as a parameter
   thumbnailArray.forEach((element) => {
-    console.log(element);
     //Create the image at this index
+    const img = document.createElement("img");
+    img.src = element.imageSrc;
+    img.alt = element.imageAlt;
+    img.className = element.imageOrientation;
+    console.log(
+      `src: ${img.src} alt: ${img.alt} orientation: ${img.className}`
+    );
     //assign the values
     //give images class name
     //append image to the DOM
@@ -35,9 +42,27 @@ function createLargeImage(largeImage) {
 //Function that creates the array of images.
 function createImageArray() {
   let imageArray = [];
-  imageArray.push(createSingleImage("src test", "alt test", "landscape"));
-  imageArray.push(createSingleImage("src test 2", "alt test 2", "portrait"));
-  imageArray.push(createSingleImage("src test 3", "alt test 3", "landscape"));
+  imageArray.push(
+    createSingleImage(
+      "./images/Clock Tower.jpg",
+      "An image of the Sapporo clock tower taken at 7:09am on a february morning",
+      "portrait"
+    )
+  );
+  imageArray.push(
+    createSingleImage(
+      "./images/Snow Sculpture.jpg",
+      "A big snow sculpture of a building being lit up with purple lights at night",
+      "landscape"
+    )
+  );
+  imageArray.push(
+    createSingleImage(
+      "./images/Akita Lake.jpg",
+      "A picture of a lake taken at dusk while it is lightly snowing.",
+      "portrait"
+    )
+  );
   return imageArray;
 }
 
