@@ -10,31 +10,35 @@ createThumbnails(images);
 function createThumbnails(thumbnailArray) {
   //   A whole array will be passed as a parameter
   thumbnailArray.forEach((element) => {
-    //Create the image at this index
-    const img = document.createElement("img");
-    img.src = element.imageSrc;
+    const img = document.createElement("img"); //Create the image at this index
+    img.src = element.imageSrc; //assign the values
     img.alt = element.imageAlt;
-    img.className = element.imageOrientation;
-    console.log(
-      `src: ${img.src} alt: ${img.alt} orientation: ${img.className}`
-    );
-    //assign the values
-    //give images class name
+    img.className = "thumbnail-image"; //give images class name
     //append image to the DOM
+    thumbnailContainer.appendChild(img);
     //add event listener to display the clicked image in the main container.
-    //createLargeImage(element)
+    img.addEventListener("click", (event) => {
+      //set inner HTML to empty string.
+      mainImageContainer.innerHTML = ""; //create img element
+      const bigImg = document.createElement("img");
+      console.log(`Successful event, ${event}`);
+      bigImg.src = element.imageSrc; //set the img values (src alt. width height are styled in css)
+      bigImg.alt = element.imageAlt;
+
+      bigImg.classList.add(element.imageOrientation); //give class
+      bigImg.classList.add("big-image"); //using classList.add allows multiple classes to be added
+      //append to DOM
+      mainImageContainer.appendChild(bigImg);
+    });
+    // createLargeImage(element);
   });
 }
 
 //STEP 3: we need to write a function to create big image.
 //test
-function createLargeImage(largeImage) {
-  //set inner HTML to empty string.
-  //create img element
-  //give class
-  //set the img values (src alt width height)
-  //append to DOM
-}
+//function createLargeImage(largeImage) {
+
+//}
 
 //!Arrow Key Stretch Goal
 //you need a global variable to keep track of index value
