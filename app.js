@@ -13,6 +13,18 @@ rightButton.addEventListener("click", function () {
   globalIndex = mod("right");
   createBigImage(images[globalIndex]);
 });
+document.addEventListener("keydown", (event) => {
+  if (event.key == "ArrowLeft") {
+    globalIndex = mod("left");
+    createBigImage(images[globalIndex]);
+  }
+});
+document.addEventListener("keydown", (event) => {
+  if (event.key == "ArrowRight") {
+    globalIndex = mod("right");
+    createBigImage(images[globalIndex]);
+  }
+});
 
 //STEP 1: Select DOM elements that will contain the images.
 const thumbnailContainer = document.getElementById("thumbnail-container");
