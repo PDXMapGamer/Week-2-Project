@@ -27,7 +27,7 @@
   position: absolute;
   display: flex;
   flex-wrap: wrap;
-  /* flex-direction: column; */
+  flex-direction: column;
   align-items: center;
   left: 30%;
   top: 2vh;
@@ -40,4 +40,24 @@
   height: 100vh;
   width: 100vw;
   background-color: gray;
+}
+#right-button {
+  right: 2vw;
+}
+#left-button {
+  left: 2vw;
+}
+button:hover {
+  cursor: pointer;
+}
+button {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 28px;
+  background-color: gray;
+  color: black;
+  border-radius: 25px;
 }

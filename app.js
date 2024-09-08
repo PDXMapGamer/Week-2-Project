@@ -66,21 +66,105 @@ function createImageArray() {
   imageArray.push(
     createSingleImage(
       "./images/Clock Tower.jpg",
-      "An image of the Sapporo clock tower taken at 7:09am on a february morning",
+      "An image of the Sapporo clock tower taken at 7:09am on a february morning. Location: Sapporo.",
       "portrait"
     )
   );
   imageArray.push(
     createSingleImage(
       "./images/Snow Sculpture.jpg",
-      "A big snow sculpture of a building being lit up with purple lights at night",
+      "A big snow sculpture of a building being lit up with purple lights at night. Location: Sapporo.",
       "landscape"
     )
   );
   imageArray.push(
     createSingleImage(
       "./images/Akita Lake.jpg",
-      "A picture of a lake taken at dusk while it is lightly snowing.",
+      "A picture of a lake taken at dusk while it is lightly snowing. Location: Akita.",
+      "portrait"
+    )
+  );
+  imageArray.push(
+    createSingleImage(
+      "./images/Kyoto River.jpg",
+      "A river with traditional styled Japanese houses on the opposite bank. Location: Kyoto.",
+      "landscape"
+    )
+  );
+  imageArray.push(
+    createSingleImage(
+      "./images/Fukuoka Nightscape.jpg",
+      "A picture taken at night on a bridge over a river with a second bridge and the modern cityscape in the background. Location: Fukuoka.",
+      "portrait"
+    )
+  );
+  imageArray.push(
+    createSingleImage(
+      "./images/Okayama Lake.jpg",
+      "A beautiful river with Okayama Castle in the background. Location: Okayama.",
+      "portrait"
+    )
+  );
+  imageArray.push(
+    createSingleImage(
+      "./images/Okayama Castle.jpg",
+      "A picture of Okayama Castle taken from a distance on the opposite side of a river with swan theme boats docked. Location: Okayama",
+      "portrait"
+    )
+  );
+  imageArray.push(
+    createSingleImage(
+      "./images/Red Panda Sign.jpg",
+      "A bilingual sign that warns the reader of the dangerous animal known as the adorable Red Pandas. Location: Osaka Tennoji Zoo.",
+      "portrait"
+    )
+  );
+  imageArray.push(
+    createSingleImage(
+      "./images/Red Panda.jpg",
+      "A picture of the Red Panda being cute behind a glass pane, for the protection of the spectators. Location: Osaka Tennoji Zoo.",
+      "portrait"
+    )
+  );
+  imageArray.push(
+    createSingleImage(
+      "./images/Nara Deer.jpg",
+      "A picture a Nara deer after being fed to recieve more treats but is met with the grim reality that there is none left. Location: Nara Park.",
+      "portrait"
+    )
+  );
+  imageArray.push(
+    createSingleImage(
+      "./images/Temple.jpg",
+      "A picture of a traditional Japanese temple. Location: Nara.",
+      "landscape"
+    )
+  );
+  imageArray.push(
+    createSingleImage(
+      "./images/Snow Monkey Village.jpg",
+      "A picture of a snowy landscape with traditional styled Japanese building and mountains in the background. Location: Jigokudani Monkey Park.",
+      "portrait"
+    )
+  );
+  imageArray.push(
+    createSingleImage(
+      "./images/Snow Monkey.jpg",
+      "A picture of an adorable baby snow monkey also known as the Japanese macaque. Location: Jigokudani Monkey Park.",
+      "portrait"
+    )
+  );
+  imageArray.push(
+    createSingleImage(
+      "./images/Snow Monkey Chilling.jpg",
+      "A picture of a Japanese macaque bathing in an onsen (Japanese hot spring), several more can be seen in the background behind the steam. Location: Jigokudani Monkey Park.",
+      "portrait"
+    )
+  );
+  imageArray.push(
+    createSingleImage(
+      "./images/Tokyo River.jpg",
+      "A picture of a river with greenery and trees on top of a mound. Skyscrapers can be seen in the background. Location: Tokyo.",
       "portrait"
     )
   );
