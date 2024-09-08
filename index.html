@@ -2,15 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Interactive and accessable photogalley for photos taken on holiday"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
     <script src="./app.js" defer></script>
-    <title>Document</title>
+    <title>Japan photogallery</title>
   </head>
   <body>
-    <div id="thumbnail-container"></div>
+    <div
+      id="thumbnail-container"
+      aria-label="This is where the thumbnails of images are. Click an image to display them"
+    ></div>
     <!-- <button id="thumbnail-button">^</button> -->
-    <section id="main-image-container"></section>
+    <!-- Unused feature for a button that hides/shows the thumbnail container  -->
+    <section id="main-image-container" aria-live="polite"></section>
     <button id="right-button">></button>
     <button id="left-button"><</button>
   </body>

@@ -5,21 +5,25 @@
 .thumbnail-image {
   height: 140px;
   width: 140px;
-  /* padding: 1px; */
   cursor: pointer;
 }
 .big-image {
   height: 100vh;
   width: 100vw;
 }
+
+/* Tested with the idea of using variables and calc() to size the images dynamically while keeping the original aspect ratio however there was too much blank space and it didnt look good, and dont have enough time to flesh this idea out. */
+/* because images are in a 4/3 aspect ratio, to perserve it . */
 /* .portrait {
-  height: 200px;
-  width: 200px;
+  --height: 100vh;
+  height: var(--height);
+  width: calc(var(--height) * (3 / 4));
   cursor: pointer;
-} */
-/* .landscape {
-  height: 200px;
-  width: 200px;
+}
+.landscape {
+  --hight: 100vh;
+  width: calc(var(--hight) * (4 / 3));
+  height: var(--hight);
   cursor: pointer;
 } */
 
@@ -27,25 +31,29 @@
   position: absolute;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
-  align-items: center;
   top: 0.5vh;
-  left: 0px;
+  left: 0px; /* Due to being unable to center the thumbnail container I decided to place it on the left hand side of the screen*/
   overflow: scroll;
   width: 500px;
   height: 150px;
   background-color: #818584;
+  /* I have no idea why this combination of flex properties alight the items HORIZONTALLY */
+  flex-direction: column;
+  align-items: center;
 }
+/* Unused feature for a button that hides/shows the thumbnail container 
 #thumbnail-button {
   left: 45%;
   top: 170px;
   z-index: 2;
-}
+} */
 
 #main-image-container {
   height: 100vh;
   width: 100vw;
   background-color: gray;
+  display: flex;
+  justify-content: center;
 }
 #right-button {
   right: 2vw;
@@ -68,6 +76,7 @@ button {
   border-radius: 25px;
 }
 @media (max-width: 600px) {
+  /* For small phones */
   #thumbnail-container {
     width: 250px;
     height: 90px;
@@ -77,3 +86,25 @@ button {
     height: 80px;
   }
 }
+/* @media (min-width: 900px) {
+  #thumbnail-container {
+    width: 320px;
+    height: 105px;
+  }
+  .thumbnail-image {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (min-width: 1200px) {
+
+  #thumbnail-container {
+    width: 400px;
+    height: 130px;
+  }
+  .thumbnail-image {
+    width: 125px;
+    height: 125px;
+  }
+} */

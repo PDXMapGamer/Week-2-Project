@@ -3,6 +3,7 @@
 let imageIndex = -1; //function increments before returning the image index so to make the first image in the array index 0 imageIndex has to be innitiated at -1
 let globalIndex = 0;
 let images = createImageArray();
+
 const leftButton = document.getElementById("left-button");
 leftButton.addEventListener("click", function () {
   globalIndex = mod("left");
@@ -30,7 +31,7 @@ document.addEventListener("keydown", (event) => {
 const thumbnailContainer = document.getElementById("thumbnail-container");
 const mainImageContainer = document.getElementById("main-image-container");
 createThumbnails(images);
-
+createBigImage(images[0]); //automatically loads the first image
 //STEP 2: Write a function to create the images in the thumbnail.
 function createThumbnails(thumbnailArray) {
   //   A whole array will be passed as a parameter
@@ -48,15 +49,6 @@ function createThumbnails(thumbnailArray) {
   });
 }
 
-//STEP 3: we need to write a function to create big image.
-//test
-//function createLargeImage(largeImage) {
-
-//}
-
-//!Arrow Key Stretch Goal
-//you need a global variable to keep track of index value
-
 function createBigImage(element) {
   //set inner HTML to empty string.
   mainImageContainer.innerHTML = ""; //create img element
@@ -66,9 +58,6 @@ function createBigImage(element) {
   bigImg.classList.add(element.imageOrientation); //give class
   bigImg.classList.add("big-image"); //using classList.add allows multiple classes to be added
   globalIndex = element.imageIndex; //when img is cliked, it should set global index to the value of the current image's position in the array, eg image 3 is index 2.
-  // console.log(globalIndex);
-  // console.log(bigImg);
-  // console.log(element);
   mainImageContainer.appendChild(bigImg); //append to DOM
 }
 function mod(direction) {
