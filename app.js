@@ -3,6 +3,17 @@
 let imageIndex = -1; //function increments before returning the image index so to make the first image in the array index 0 imageIndex has to be innitiated at -1
 let globalIndex = 0;
 let images = createImageArray();
+const leftButton = document.getElementById("left-button");
+leftButton.addEventListener("click", function () {
+  globalIndex = mod("left");
+  createBigImage(images[globalIndex]);
+});
+const rightButton = document.getElementById("right-button");
+rightButton.addEventListener("click", function () {
+  globalIndex = mod("right");
+  createBigImage(images[globalIndex]);
+});
+
 //STEP 1: Select DOM elements that will contain the images.
 const thumbnailContainer = document.getElementById("thumbnail-container");
 const mainImageContainer = document.getElementById("main-image-container");
@@ -43,10 +54,20 @@ function createBigImage(element) {
   bigImg.classList.add(element.imageOrientation); //give class
   bigImg.classList.add("big-image"); //using classList.add allows multiple classes to be added
   globalIndex = element.imageIndex; //when img is cliked, it should set global index to the value of the current image's position in the array, eg image 3 is index 2.
-  console.log(globalIndex);
-  console.log(bigImg);
-  console.log(element);
+  // console.log(globalIndex);
+  // console.log(bigImg);
+  // console.log(element);
   mainImageContainer.appendChild(bigImg); //append to DOM
+}
+function mod(direction) {
+  if (globalIndex - 1 < 0) {
+    globalIndex += images.length;
+  }
+  if (direction == "left") {
+    return (globalIndex - 1) % images.length;
+  } else {
+    return (globalIndex + 1) % images.length;
+  }
 }
 
 function createSingleImage(src, alt, orientation) {

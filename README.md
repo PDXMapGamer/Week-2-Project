@@ -7,3 +7,4 @@ https://stackoverflow.com/questions/1988514/javascript-css-how-to-add-and-remove
 https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
 Bug 3: Index not correctly updating when clicking a new image. Solution: there was no bug, I was logging the wrong index variable and the global index variable is updating correctly.
 Bug 4: "Uncaught ReferenceError: can't access lexical declaration 'imageIndex' before initialization" solution is trivial as I moved the invoke createImageArray function to after the imageIndex was initialized
+Bug 5: TypeError occurs when you press left on image index 0. Appears to be caused by JS calculating -1 % imageArray.length as -1 instead of 14 (which is the correct answer mathematically and what I intended to use for this function). Solved by manually adding the value of imageArray.length to make the looping property work as intended
