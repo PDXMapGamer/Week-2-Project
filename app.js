@@ -136,7 +136,7 @@ function createImageArray() {
   );
   imageArray.push(
     createSingleImage(
-      "./images/Red Panda Sign.jpg",
+      "./images/Red Panda sign.jpg",
       "A bilingual sign that warns the reader of the dangerous animal known as the adorable Red Pandas. Location: Osaka Tennoji Zoo.",
       "portrait"
     )
