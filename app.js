@@ -1,7 +1,8 @@
 //Test Comment
-let images = createImageArray();
-let imageIndex = 0;
+
+let imageIndex = -1; //function increments before returning the image index so to make the first image in the array index 0 imageIndex has to be innitiated at -1
 let globalIndex = 0;
+let images = createImageArray();
 //STEP 1: Select DOM elements that will contain the images.
 const thumbnailContainer = document.getElementById("thumbnail-container");
 const mainImageContainer = document.getElementById("main-image-container");
@@ -15,23 +16,12 @@ function createThumbnails(thumbnailArray) {
     img.src = element.imageSrc; //assign the values
     img.alt = element.imageAlt;
     img.className = "thumbnail-image"; //give images class name
-    img.imageIndex = element.imageIndex = imageIndex; //sets both the value of img and element index to the current index, looks clunky but I am not sure how to make it prettier and it makes the code work
     //append image to the DOM
     thumbnailContainer.appendChild(img);
     //add event listener to display the clicked image in the main container.
     img.addEventListener("click", (event) => {
-      //set inner HTML to empty string.
-      mainImageContainer.innerHTML = ""; //create img element
-      const bigImg = document.createElement("img");
-      bigImg.src = element.imageSrc; //set the img values (src alt. width height are styled in css)
-      bigImg.alt = element.imageAlt;
-      bigImg.classList.add(element.imageOrientation); //give class
-      bigImg.classList.add("big-image"); //using classList.add allows multiple classes to be added
-      globalIndex = element.imageIndex; //when img is cliked, it should set global index to the value of the current image's position in the array, eg image 3 is index 2.
-      mainImageContainer.appendChild(bigImg); //append to DOM
+      createBigImage(element);
     });
-    console.log(imageIndex);
-    imageIndex++; //at the end of the loop the image index increments, so it is equal to the position in the index.
   });
 }
 
@@ -44,6 +34,32 @@ function createThumbnails(thumbnailArray) {
 //!Arrow Key Stretch Goal
 //you need a global variable to keep track of index value
 
+function createBigImage(element) {
+  //set inner HTML to empty string.
+  mainImageContainer.innerHTML = ""; //create img element
+  const bigImg = document.createElement("img");
+  bigImg.src = element.imageSrc; //set the img values (src alt. width height are styled in css)
+  bigImg.alt = element.imageAlt;
+  bigImg.classList.add(element.imageOrientation); //give class
+  bigImg.classList.add("big-image"); //using classList.add allows multiple classes to be added
+  globalIndex = element.imageIndex; //when img is cliked, it should set global index to the value of the current image's position in the array, eg image 3 is index 2.
+  console.log(globalIndex);
+  console.log(bigImg);
+  console.log(element);
+  mainImageContainer.appendChild(bigImg); //append to DOM
+}
+
+function createSingleImage(src, alt, orientation) {
+  //creates an object that represents 1 image with the source link, the alt text, the orientation of the image as well as its index which will be added later.
+  imageIndex++;
+  console.log(imageIndex);
+  return {
+    imageSrc: src,
+    imageAlt: alt,
+    imageOrientation: orientation,
+    imageIndex: imageIndex,
+  };
+}
 //Function that creates the array of images.
 function createImageArray() {
   let imageArray = [];
@@ -69,13 +85,4 @@ function createImageArray() {
     )
   );
   return imageArray;
-}
-
-function createSingleImage(src, alt, orientation) {
-  return {
-    imageSrc: src,
-    imageAlt: alt,
-    imageOrientation: orientation,
-    imageIndex: "",
-  };
 }
